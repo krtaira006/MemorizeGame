@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CardView: View {
     
+    let content: String
     @State var isFaceUp = true
     
     var body: some View {
@@ -18,7 +19,7 @@ struct CardView: View {
                 base
                     .fill(.white)
                     .strokeBorder(lineWidth: 4)
-                Text("🐶")
+                Text(content)
                     .font(.largeTitle)
             }
             else {
@@ -34,5 +35,5 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView()
+    CardView(content: "😂")
 }

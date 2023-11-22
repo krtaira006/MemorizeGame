@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            CardView(isFaceUp: true)
-            CardView()
-            CardView(isFaceUp: false)
-            CardView(isFaceUp: false)
+            CardView(content: "🐶")
+            CardView(content: "👻")
+            CardView(content: "🤖")
+            CardView(content: "🦁")
         }
         .foregroundStyle(.orange)
         .padding()
