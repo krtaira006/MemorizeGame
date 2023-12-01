@@ -13,7 +13,6 @@
 		C6C4D8F32B0C55F400D3B8E9 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C4D8F22B0C55F400D3B8E9 /* EmojiMemoryGameView.swift */; };
 		C6C4D8F52B0C55F500D3B8E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C4D8F42B0C55F500D3B8E9 /* Assets.xcassets */; };
 		C6C4D8F82B0C55F500D3B8E9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6C4D8F72B0C55F500D3B8E9 /* Preview Assets.xcassets */; };
-		C6C4D8FF2B0C562700D3B8E9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C4D8FE2B0C562700D3B8E9 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +23,6 @@
 		C6C4D8F22B0C55F400D3B8E9 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		C6C4D8F42B0C55F500D3B8E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6C4D8F72B0C55F500D3B8E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C6C4D8FE2B0C562700D3B8E9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +59,6 @@
 				C6C4D8F22B0C55F400D3B8E9 /* EmojiMemoryGameView.swift */,
 				C68AFC892B1097E800A8E126 /* MemorizeGame.swift */,
 				C68AFC8B2B1098E900A8E126 /* EmojiMemoryGame.swift */,
-				C6C4D8FE2B0C562700D3B8E9 /* CardView.swift */,
 				C6C4D8F42B0C55F500D3B8E9 /* Assets.xcassets */,
 				C6C4D8F62B0C55F500D3B8E9 /* Preview Content */,
 			);
@@ -147,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6C4D8F32B0C55F400D3B8E9 /* EmojiMemoryGameView.swift in Sources */,
-				C6C4D8FF2B0C562700D3B8E9 /* CardView.swift in Sources */,
 				C6C4D8F12B0C55F400D3B8E9 /* MemorizeApp.swift in Sources */,
 				C68AFC8A2B1097E800A8E126 /* MemorizeGame.swift in Sources */,
 				C68AFC8C2B1098E900A8E126 /* EmojiMemoryGame.swift in Sources */,
