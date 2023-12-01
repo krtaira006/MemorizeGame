@@ -14,7 +14,7 @@ struct MemoryGame<CardContent> {
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int) -> CardContent) {
         cards = [Card]()
         //add numberOfPairsOfCards x 2 cards
-        for pairIndex in 0 ..< numberOfPairsOfCards {
+        for pairIndex in 0 ..< max(2, numberOfPairsOfCards) {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(isFaceUp: false, isMatched: false, content: content))
             cards.append(Card(isFaceUp: false, isMatched: false, content: content))
