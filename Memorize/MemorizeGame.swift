@@ -17,7 +17,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         for pairIndex in 0 ..< max(2, numberOfPairsOfCards) {
             let content = cardContentFactory(pairIndex)
             cards.append(Card(isFaceUp: true, isMatched: false, content: content))
-            cards.append(Card(isFaceUp: true, isMatched: false, content: content))
+            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
         }
     }
     
@@ -39,10 +39,14 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         print(cards)
     }
     
-    struct Card: Equatable, Identifiable {
+    struct Card: Equatable, Identifiable, CustomDebugStringConvertible {
         var id = UUID()
         var isFaceUp: Bool
         var isMatched: Bool
         let content: CardContent
+        
+        var debugDescription: String {
+            return "\(id): \(content) \(isFaceUp ? "up" : "down") \(isMatched ? "matched" : "no")"
+        }
     }
 }

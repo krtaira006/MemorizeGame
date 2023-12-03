@@ -76,15 +76,15 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            let base : RoundedRectangle = RoundedRectangle(cornerRadius: 12)
+            let base = RoundedRectangle(cornerRadius: 12)
             Group {
                 base
                     .fill(.white)
-                    .strokeBorder(lineWidth: 4)
+                    .strokeBorder(lineWidth: 2)
                 Text(card.content)
-                    .font(.largeTitle)
-                    
-                
+                    .font(.system(size: 250))
+                    .minimumScaleFactor(0.01)
+                    .aspectRatio(contentMode: .fit)
             }
             .opacity(card.isFaceUp ? 1 : 0)
             base
@@ -97,4 +97,8 @@ struct CardView: View {
 
 #Preview {
     EmojiMemoryGameView(viewModel: EmojiMemoryGame())
+}
+
+#Preview {
+    CardView(EmojiMemoryGame().cards.first!)
 }
