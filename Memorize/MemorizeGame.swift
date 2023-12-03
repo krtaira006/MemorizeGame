@@ -16,25 +16,41 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         //add numberOfPairsOfCards x 2 cards
         for pairIndex in 0 ..< max(2, numberOfPairsOfCards) {
             let content = cardContentFactory(pairIndex)
-            cards.append(Card(isFaceUp: true, isMatched: false, content: content))
+            //creates a pair of cards by adding into the array twice
+            cards.append(Card(isFaceUp: false, isMatched: false, content: content))
             cards.append(Card(isFaceUp: false, isMatched: false, content: content))
         }
     }
     
-    mutating func choose(card: Card) {
-        if let chosenIndex = index(of: card) {
-            cards[chosenIndex].isFaceUp.toggle() //reference type and value type matters here
+    // receives an index of the first card chosen
+    var indexOfTheOneAndOnlyFaceUpCard: Int? {
+        get {
+            var faceUpCardIndices = cards.indices.filter { index in cards[index].isFaceUp }
+            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
         }
-        
+        set {
+            return cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) }
+        }
     }
     
-    private func index(of card: Card) -> Int? {
-        for index in cards.indices {
-            if cards[index].id == card.id {
-                return index
+    mutating func choose(card: Card) {
+        //This line checks if the chosen card exists
+        if let chosenIndex = cards.firstIndex(where: {$0.id == card.id}) {
+            //This checks if the chosen card is faced down and the card that is not matched yet
+            if !cards[chosenIndex].isFaceUp && !cards[chosenIndex].isMatched {
+                //This line checks if the chosen card is the 1st or 2nd card. if 2nd, it check if 1st == 2nd card
+                if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
+                    if cards[chosenIndex].content == cards[potentialMatchIndex].content {
+                        cards[chosenIndex].isMatched = true
+                        cards[potentialMatchIndex].isMatched = true
+                    }
+                } else {
+                    indexOfTheOneAndOnlyFaceUpCard = chosenIndex
+                }
+                cards[chosenIndex].isFaceUp = true
             }
         }
-        return nil // FIXME: bogus
+        
     }
     
     mutating func shuffle() {

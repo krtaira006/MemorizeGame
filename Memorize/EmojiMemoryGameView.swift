@@ -77,6 +77,7 @@ struct CardView: View {
     var body: some View {
         ZStack {
             let base = RoundedRectangle(cornerRadius: 12)
+            //The card when its faced up
             Group {
                 base
                     .fill(.white)
@@ -87,10 +88,12 @@ struct CardView: View {
                     .aspectRatio(contentMode: .fit)
             }
             .opacity(card.isFaceUp ? 1 : 0)
+            //The card when its faced down
             base
                 .fill()
                 .opacity(card.isFaceUp ? 0 : 1)
         }
+        .opacity(card.isFaceUp || !card.isMatched ? 1 : 0)
     }
 }
 
