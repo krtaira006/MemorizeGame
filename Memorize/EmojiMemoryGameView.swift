@@ -10,61 +10,30 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
     
     @ObservedObject var viewModel: EmojiMemoryGame
+    private let aspectRatio: CGFloat = 2/3
     
     var body: some View {
         VStack {
-            ScrollView {
-                cards
-                    .animation(.default, value: viewModel.cards)
-            }
+            cards
+                .animation(.default, value: viewModel.cards)
             Button("Shuffle") {
                 viewModel.shuffle()
             }
-            // cardCountAdjustersView
+            //cardCountAdjustersView
         }
         .padding()
     }
     
-    var cards: some View {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: 85), spacing: 0)], spacing: 0) {
-            ForEach(viewModel.cards) { card in
-                CardView(card)
-                    .aspectRatio(2/3, contentMode: .fit)
-                    .padding(4)
-                    .onTapGesture {
-                        viewModel.choose(card)
-                    }
-            }
+    private var cards: some View {
+        AspectVGrid(viewModel.cards, aspectRatio: aspectRatio) { card in
+            CardView(card)
+                .padding(4)
+                .onTapGesture {
+                    viewModel.choose(card)
+                }
         }
         .foregroundColor(.orange)
     }
-    
-    //    var cardCountAdjustersView: some View {
-    //        HStack {
-    //            cardRemover
-    //            Spacer()
-    //            cardAdder
-    //        }
-    //        .imageScale(.large)
-    //        .font(.largeTitle)
-    //    }
-    //
-    //    var cardRemover: some View {
-    //        cardCountAdjuster(offset: -1, symbol: "rectangle.stack.badge.minus.fill")
-    //    }
-    //
-    //    var cardAdder: some View {
-    //        cardCountAdjuster(offset: +1, symbol: "rectangle.stack.badge.plus.fill")
-    //    }
-    //
-    //    func cardCountAdjuster(offset: Int, symbol: String) -> some View{
-    //        Button(action: {
-    //            .cardCount += offset
-    //        }, label: {
-    //            Image(systemName: symbol)
-    //        })
-    //        .disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
-    //    }
 }
 
 struct CardView: View {
@@ -102,6 +71,6 @@ struct CardView: View {
     EmojiMemoryGameView(viewModel: EmojiMemoryGame())
 }
 
-#Preview {
-    CardView(EmojiMemoryGame().cards.first!)
-}
+//#Preview {
+//    CardView(EmojiMemoryGame().cards.first!)
+//}

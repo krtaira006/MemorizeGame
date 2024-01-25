@@ -25,8 +25,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     // receives an index of the first card chosen
     var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get {
-            var faceUpCardIndices = cards.indices.filter { index in cards[index].isFaceUp }
-            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
+            return cards.indices.filter { index in cards[index].isFaceUp }.only
         }
         set {
             return cards.indices.forEach { cards[$0].isFaceUp = (newValue == $0) }
@@ -67,5 +66,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
         var debugDescription: String {
             return "\(id): \(content) \(isFaceUp ? "up" : "down") \(isMatched ? "matched" : "no")"
         }
+    }
+}
+
+extension Array {
+    var only: Element? {
+        count == 1 ? first : nil
     }
 }

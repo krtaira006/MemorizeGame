@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C66868D12B62183000A3EFA8 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66868D02B62183000A3EFA8 /* AspectVGrid.swift */; };
 		C68AFC8A2B1097E800A8E126 /* MemorizeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68AFC892B1097E800A8E126 /* MemorizeGame.swift */; };
 		C68AFC8C2B1098E900A8E126 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68AFC8B2B1098E900A8E126 /* EmojiMemoryGame.swift */; };
 		C6C4D8F12B0C55F400D3B8E9 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C4D8F02B0C55F400D3B8E9 /* MemorizeApp.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C66868D02B62183000A3EFA8 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
 		C68AFC892B1097E800A8E126 /* MemorizeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeGame.swift; sourceTree = "<group>"; };
 		C68AFC8B2B1098E900A8E126 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		C6C4D8ED2B0C55F400D3B8E9 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 				C6C4D8F22B0C55F400D3B8E9 /* EmojiMemoryGameView.swift */,
 				C68AFC892B1097E800A8E126 /* MemorizeGame.swift */,
 				C68AFC8B2B1098E900A8E126 /* EmojiMemoryGame.swift */,
+				C66868D02B62183000A3EFA8 /* AspectVGrid.swift */,
 				C6C4D8F42B0C55F500D3B8E9 /* Assets.xcassets */,
 				C6C4D8F62B0C55F500D3B8E9 /* Preview Content */,
 			);
@@ -146,6 +149,7 @@
 				C6C4D8F32B0C55F400D3B8E9 /* EmojiMemoryGameView.swift in Sources */,
 				C6C4D8F12B0C55F400D3B8E9 /* MemorizeApp.swift in Sources */,
 				C68AFC8A2B1097E800A8E126 /* MemorizeGame.swift in Sources */,
+				C66868D12B62183000A3EFA8 /* AspectVGrid.swift in Sources */,
 				C68AFC8C2B1098E900A8E126 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +192,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_PREVIEWS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -252,6 +257,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -286,6 +292,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -315,6 +322,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
