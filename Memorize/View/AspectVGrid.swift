@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
-    var items: [Item]
+    let items: [Item]
     var aspectRatio: CGFloat = 1
-    var content: (Item) -> ItemView
+    let content: (Item) -> ItemView
     
-    init(_ items: [Item], aspectRatio: CGFloat, content: @escaping (Item) -> ItemView) {
+    init(_ items: [Item], aspectRatio: CGFloat, @ViewBuilder content: @escaping (Item) -> ItemView) {
         self.items = items
         self.aspectRatio = aspectRatio
         self.content = content
@@ -34,10 +34,10 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
         let count = CGFloat(count)
         var columnCount = 1.0
         repeat {
-            let width = size.width / columnCount
-            let height = width / aspectRatio
+            let width = size.width / columnCount // width of the card: the whole width of screen / # of cards in a row
+            let height = width / aspectRatio // height of the card: width / the designated ratio (in this case 2/3)
             
-            let rowCount = (count / columnCount).rounded(.up)
+            let rowCount = (count / columnCount).rounded(.up) // total # of cards / # of columns we have
             if rowCount * height < size.height {
                 return (size.width / columnCount).rounded(.down)
             }
@@ -45,5 +45,4 @@ struct AspectVGrid<Item: Identifiable, ItemView: View>: View {
         } while columnCount < count
         return min(size.width / count, size.height * aspectRatio).rounded(.down)
     }
-    
 }
